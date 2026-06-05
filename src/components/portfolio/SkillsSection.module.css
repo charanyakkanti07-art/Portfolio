@@ -1,0 +1,133 @@
+.section {
+  position: relative;
+  padding: clamp(5rem, 12vh, 9rem) clamp(1.5rem, 6vw, 7rem)
+    clamp(3rem, 8vh, 5rem);
+  background:
+    radial-gradient(
+      ellipse at 10% 100%,
+      oklch(0.74 0.17 55 / 0.1),
+      transparent 50%
+    ),
+    var(--background);
+}
+
+.header {
+  margin-bottom: clamp(2.5rem, 6vw, 4rem);
+}
+
+.eyebrow {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  font-size: 0.72rem;
+  color: var(--secondary-glow);
+}
+
+.heading {
+  margin: 0.6rem 0 0.4rem;
+  font-size: clamp(2.2rem, 6vw, 4rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--foreground);
+}
+
+.sub {
+  color: var(--muted-foreground);
+  font-size: clamp(1rem, 2vw, 1.2rem);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+}
+
+.group {
+  padding: clamp(1.25rem, 2.5vw, 1.75rem);
+  border-radius: var(--radius-2xl);
+  border: 1px solid var(--glass-border);
+  background: linear-gradient(
+    160deg,
+    oklch(0.24 0.02 264 / 0.6),
+    oklch(0.18 0.02 264 / 0.4)
+  );
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease;
+}
+
+.group:hover {
+  transform: translateY(-5px);
+  border-color: oklch(0.74 0.17 55 / 0.4);
+}
+
+.groupLabel {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--primary-glow);
+  margin: 0 0 1rem;
+}
+
+.skillList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.skill {
+  padding: 0.6rem 0.85rem;
+  border-radius: var(--radius-md);
+  font-size: 0.9rem;
+  color: var(--foreground);
+  background: oklch(0.3 0.02 264 / 0.5);
+  border: 1px solid var(--border);
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+.skill:hover {
+  background: oklch(0.74 0.17 55 / 0.18);
+  transform: translateX(4px);
+}
+
+.footer {
+  margin-top: clamp(4rem, 10vh, 7rem);
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+
+.footerName {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  font-weight: 700;
+  background: var(--gradient-warm);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.footerMeta {
+  margin-top: 0.5rem;
+  color: var(--muted-foreground);
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

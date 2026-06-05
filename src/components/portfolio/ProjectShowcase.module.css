@@ -1,0 +1,182 @@
+.section {
+  position: relative;
+  padding: clamp(5rem, 12vh, 9rem) clamp(1.5rem, 6vw, 7rem);
+  background:
+    radial-gradient(
+      ellipse at 80% 0%,
+      oklch(0.6 0.13 245 / 0.12),
+      transparent 55%
+    ),
+    var(--background);
+}
+
+.header {
+  margin-bottom: clamp(2.5rem, 6vw, 4rem);
+}
+
+.eyebrow {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  font-size: 0.72rem;
+  color: var(--primary-glow);
+}
+
+.heading {
+  margin: 0.6rem 0 0.4rem;
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  background: var(--gradient-warm);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.sub {
+  color: var(--muted-foreground);
+  font-size: clamp(1rem, 2vw, 1.3rem);
+}
+
+.card {
+  position: relative;
+  border-radius: var(--radius-4xl);
+  border: 1px solid var(--glass-border);
+  background: linear-gradient(
+    160deg,
+    oklch(0.24 0.02 264 / 0.7),
+    oklch(0.18 0.02 264 / 0.5)
+  );
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: var(--shadow-deep);
+  overflow: hidden;
+}
+
+.cardGlow {
+  position: absolute;
+  top: -40%;
+  left: -10%;
+  width: 60%;
+  height: 120%;
+  background: radial-gradient(
+    circle,
+    oklch(0.74 0.17 55 / 0.18),
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+.cardInner {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 5vw, 4rem);
+  padding: clamp(2rem, 5vw, 3.5rem);
+}
+
+.cardLeft {
+  display: flex;
+  flex-direction: column;
+}
+
+.badge {
+  align-self: flex-start;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--primary-foreground);
+  background: var(--gradient-warm);
+  margin-bottom: 1.25rem;
+}
+
+.cardTitle {
+  font-size: clamp(1.4rem, 2.6vw, 2rem);
+  line-height: 1.25;
+  font-weight: 600;
+  margin: 0 0 1rem;
+  color: var(--foreground);
+}
+
+.cardDesc {
+  color: var(--muted-foreground);
+  line-height: 1.7;
+  margin-bottom: auto;
+}
+
+.stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1.75rem;
+}
+
+.stackChip {
+  padding: 0.4rem 0.85rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  color: var(--secondary-glow);
+  border: 1px solid oklch(0.6 0.13 245 / 0.3);
+  background: oklch(0.6 0.13 245 / 0.1);
+}
+
+.featureGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.feature {
+  padding: 1.25rem;
+  border-radius: var(--radius-2xl);
+  border: 1px solid var(--border);
+  background: oklch(0.2 0.02 264 / 0.6);
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.feature:hover {
+  transform: translateY(-4px);
+  border-color: oklch(0.74 0.17 55 / 0.5);
+  box-shadow: var(--shadow-glow-warm);
+}
+
+.featureDot {
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: var(--gradient-warm);
+  margin-bottom: 0.85rem;
+  box-shadow: 0 0 12px oklch(0.82 0.16 65 / 0.8);
+}
+
+.featureTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 0.4rem;
+  color: var(--foreground);
+}
+
+.featureDesc {
+  font-size: 0.85rem;
+  line-height: 1.55;
+  color: var(--muted-foreground);
+}
+
+@media (max-width: 900px) {
+  .cardInner {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .featureGrid {
+    grid-template-columns: 1fr;
+  }
+}
