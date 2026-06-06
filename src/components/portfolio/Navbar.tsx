@@ -83,7 +83,7 @@ export default function Navbar() {
           {/* Right Navigation Mail Option */}
           <div className={styles.navRight}>
             <a
-              href="mailto:yakkanticharanreddy@gmail.com"
+              href="mailto:charanyakkanti.07@gmail.com"
               className={styles.mailBtn}
               aria-label="Email Charan"
             >
@@ -116,12 +116,12 @@ export default function Navbar() {
                 </a>
               ))}
               <a
-                href="mailto:yakkanticharanreddy@gmail.com"
+                href="mailto:charanyakkanti.07@gmail.com"
                 className={styles.mobileMailBtn}
                 onClick={() => setMobileMenuOpen(false)}
               >
                 <Mail size={16} />
-                <span>yakkanticharanreddy@gmail.com</span>
+                <span>charanyakkanti.07@gmail.com</span>
               </a>
             </div>
           </motion.div>
