@@ -262,7 +262,7 @@ export default function VideoIntro({ onScrollDown }: VideoIntroProps) {
               <span className={styles.dotYellow} />
               <span className={styles.dotGreen} />
             </div>
-            <span className={styles.terminalTitle}>ai_hologram_core.sys</span>
+            <span className={styles.terminalTitle}>about_me.sys</span>
             <span className={styles.terminalStatus}>ONLINE</span>
           </div>
           <div className={styles.terminalBody}>
