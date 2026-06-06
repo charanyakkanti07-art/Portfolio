@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { z } from "zod";
-import { Mail, MessageCircle, Linkedin, Github, Check, Send } from "lucide-react";
+import { Mail, MessageCircle, Linkedin, Github, Check, Send, Phone } from "lucide-react";
 import Magnet from "./Magnet";
 import styles from "./ContactSection.module.css";
 
@@ -13,9 +13,15 @@ const CONTACTS = [
     icon: Mail,
   },
   {
+    label: "Phone",
+    value: "+91 93461 41705",
+    href: "tel:+919346141705",
+    icon: Phone,
+  },
+  {
     label: "WhatsApp",
     value: "Chat directly",
-    href: "https://wa.me/910000000000",
+    href: "https://wa.me/919346141705",
     icon: MessageCircle,
   },
   {
