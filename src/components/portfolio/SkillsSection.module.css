@@ -8,11 +8,12 @@
       oklch(0.74 0.17 55 / 0.1),
       transparent 50%
     ),
-    var(--background);
+    var(--obsidian);
 }
 
 .header {
-  margin-bottom: clamp(2.5rem, 6vw, 4rem);
+  max-width: 1200px;
+  margin: 0 auto clamp(2.5rem, 6vw, 4rem);
 }
 
 .eyebrow {
@@ -37,12 +38,15 @@
 }
 
 .grid {
+  max-width: 1200px;
+  margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1.25rem;
 }
 
 .group {
+  --tint: var(--tint-amber);
   padding: clamp(1.25rem, 2.5vw, 1.75rem);
   border-radius: var(--radius-2xl);
   border: 1px solid var(--glass-border);
@@ -55,18 +59,20 @@
   -webkit-backdrop-filter: blur(14px);
   transition:
     transform 0.35s ease,
-    border-color 0.35s ease;
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
 }
 
 .group:hover {
   transform: translateY(-5px);
-  border-color: oklch(0.74 0.17 55 / 0.4);
+  border-color: color-mix(in oklab, var(--tint) 55%, transparent);
+  box-shadow: 0 0 40px -12px var(--tint);
 }
 
 .groupLabel {
   font-size: 0.95rem;
   font-weight: 600;
-  color: var(--primary-glow);
+  color: var(--tint);
   margin: 0 0 1rem;
 }
 
@@ -88,36 +94,14 @@
   border: 1px solid var(--border);
   transition:
     background 0.3s ease,
-    transform 0.3s ease;
+    transform 0.3s ease,
+    border-color 0.3s ease;
 }
 
 .skill:hover {
-  background: oklch(0.74 0.17 55 / 0.18);
+  background: color-mix(in oklab, var(--tint) 16%, transparent);
+  border-color: color-mix(in oklab, var(--tint) 40%, transparent);
   transform: translateX(4px);
-}
-
-.footer {
-  margin-top: clamp(4rem, 10vh, 7rem);
-  padding-top: 2rem;
-  border-top: 1px solid var(--border);
-  text-align: center;
-}
-
-.footerName {
-  font-family: var(--font-display);
-  font-size: clamp(1.5rem, 4vw, 2.5rem);
-  font-weight: 700;
-  background: var(--gradient-warm);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.footerMeta {
-  margin-top: 0.5rem;
-  color: var(--muted-foreground);
-  font-size: 0.9rem;
-  letter-spacing: 0.04em;
 }
 
 @media (max-width: 900px) {

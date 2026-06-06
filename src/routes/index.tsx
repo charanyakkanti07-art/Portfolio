@@ -1,8 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useRef } from "react";
 import VideoIntro from "@/components/portfolio/VideoIntro";
+import AboutSection from "@/components/portfolio/AboutSection";
+import ServicesSection from "@/components/portfolio/ServicesSection";
 import ProjectShowcase from "@/components/portfolio/ProjectShowcase";
+import MarqueeSection from "@/components/portfolio/MarqueeSection";
 import SkillsSection from "@/components/portfolio/SkillsSection";
+import ContactSection from "@/components/portfolio/ContactSection";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -39,8 +43,12 @@ function Index() {
     <main>
       <VideoIntro onScrollDown={scrollToContent} />
       <div ref={contentRef}>
+        <AboutSection />
+        <ServicesSection />
         <ProjectShowcase />
+        <MarqueeSection />
         <SkillsSection />
+        <ContactSection />
       </div>
     </main>
   );
