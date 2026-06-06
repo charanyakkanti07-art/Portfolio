@@ -1,4 +1,4 @@
-# 🎬 Charan Reddy Yakkanti — Cinematic AI Portfolio
+# 🎬 Charan Reddy Yakkanti — Portfolio
 
 A modern, highly immersive, and interactive developer portfolio showcasing Charan's expertise in **Computer Science, Artificial Intelligence, and Data Science**. 
 
