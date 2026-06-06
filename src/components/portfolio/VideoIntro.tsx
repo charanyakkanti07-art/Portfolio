@@ -272,7 +272,7 @@ export default function VideoIntro({ onScrollDown }: VideoIntroProps) {
             <div className={styles.terminalData}>
               <div className={styles.dataRow}>
                 <span className={styles.dataLabel}>[SYS]:</span>
-                <span className={styles.dataVal}>CHARAN_CINEMATIC_V1.0</span>
+                <span className={styles.dataVal}>CHARAN REDDY YAKKANTI</span>
               </div>
               <div className={styles.dataRow}>
                 <span className={styles.dataLabel}>[LOC]:</span>
