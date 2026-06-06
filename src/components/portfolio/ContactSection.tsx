@@ -58,7 +58,7 @@ export default function ContactSection() {
     setSent(false);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const result = schema.safeParse(form);
     if (!result.success) {
@@ -71,8 +71,46 @@ export default function ContactSection() {
       return;
     }
     setErrors({});
-    setSent(true);
-    setForm({ name: "", email: "", message: "" });
+    
+    const accessKey = import.meta.env.VITE_WEB3FORMS_KEY;
+    if (accessKey) {
+      try {
+        const response = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            access_key: accessKey,
+            name: form.name,
+            email: form.email,
+            message: form.message,
+            from_name: "Portfolio Contact Form",
+            subject: `New Message from ${form.name} on Portfolio`,
+          }),
+        });
+        const data = await response.json();
+        if (data.success) {
+          setSent(true);
+          setForm({ name: "", email: "", message: "" });
+        } else {
+          setErrors({ message: data.message || "Failed to send email." });
+        }
+      } catch (err) {
+        setErrors({ message: "An error occurred while sending." });
+      }
+    } else {
+      // Fallback to mailto link
+      const subject = encodeURIComponent(`Portfolio Message from ${form.name}`);
+      const body = encodeURIComponent(
+        `Name: ${form.name}\nEmail: ${form.email}\n\nMessage:\n${form.message}`
+      );
+      window.location.href = `mailto:charanyakkanti.07@gmail.com?subject=${subject}&body=${body}`;
+      
+      setSent(true);
+      setForm({ name: "", email: "", message: "" });
+    }
   };
 
   return (
@@ -170,13 +208,14 @@ export default function ContactSection() {
         <div className={styles.links}>
           {CONTACTS.map((c) => {
             const Icon = c.icon;
+            const isExternal = c.href.startsWith("http");
             return (
               <Magnet key={c.label} strength={14}>
                 <a
                   className={styles.link}
                   href={c.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  target={isExternal ? "_blank" : undefined}
+                  rel={isExternal ? "noopener noreferrer" : undefined}
                 >
                   <span className={styles.linkIcon}>
                     <Icon size={20} />
