@@ -90,5 +90,5 @@ When running outside the Lovable cloud sandboxes:
 * Computer Science & AI Undergraduate
 * Specialization: AI, Machine Learning, Data Science, & Full-Stack Development
 * Location: Andhra Pradesh, India
-* Contact Email: [yakkanticharanreddy@gmail.com](mailto:yakkanticharanreddy@gmail.com)
+* Contact Email: [charanyakkanti.07@gmail.com](mailto:charanyakkanti.07@gmail.com)
 "# Portfolio" 
