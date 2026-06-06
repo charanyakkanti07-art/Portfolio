@@ -5,22 +5,33 @@ import styles from "./SkillsSection.module.css";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const GROUPS = [
+const TINTS: Record<string, string> = {
+  amber: "var(--tint-amber)",
+  purple: "var(--tint-purple)",
+  blue: "var(--tint-blue)",
+  emerald: "var(--tint-emerald)",
+};
+
+const GROUPS: { label: string; tint: keyof typeof TINTS; skills: string[] }[] = [
   {
     label: "Programming Languages",
+    tint: "amber",
     skills: ["Python", "Java", "JavaScript"],
   },
   {
     label: "Web Technologies",
-    skills: ["HTML", "CSS", "JavaScript"],
+    tint: "purple",
+    skills: ["HTML", "CSS", "React"],
   },
   {
     label: "CS Fundamentals",
+    tint: "blue",
     skills: ["Data Structures", "Algorithms", "OOP"],
   },
   {
-    label: "Tools",
-    skills: ["Git", "GitHub", "VS Code"],
+    label: "AI & Tools",
+    tint: "emerald",
+    skills: ["Machine Learning", "Git", "VS Code"],
   },
 ];
 
@@ -56,7 +67,11 @@ export default function SkillsSection() {
 
       <div className={styles.grid}>
         {GROUPS.map((group) => (
-          <div key={group.label} className={styles.group}>
+          <div
+            key={group.label}
+            className={styles.group}
+            style={{ ["--tint" as string]: TINTS[group.tint] }}
+          >
             <h3 className={styles.groupLabel}>{group.label}</h3>
             <ul className={styles.skillList}>
               {group.skills.map((s) => (
@@ -68,13 +83,6 @@ export default function SkillsSection() {
           </div>
         ))}
       </div>
-
-      <footer className={styles.footer}>
-        <p className={styles.footerName}>Charan Reddy Yakkanti</p>
-        <p className={styles.footerMeta}>
-          AI &amp; Data Science · Andhra Pradesh, India
-        </p>
-      </footer>
     </section>
   );
 }
