@@ -43,8 +43,12 @@ function Index() {
     <main>
       <VideoIntro onScrollDown={scrollToContent} />
       <div ref={contentRef}>
+        <AboutSection />
+        <ServicesSection />
         <ProjectShowcase />
+        <MarqueeSection />
         <SkillsSection />
+        <ContactSection />
       </div>
     </main>
   );
