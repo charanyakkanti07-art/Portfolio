@@ -1,9 +1,7 @@
-import { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { motion } from "framer-motion";
+import { Terminal, Globe, Cpu, Brain } from "lucide-react";
+import Magnet from "./Magnet";
 import styles from "./SkillsSection.module.css";
-
-gsap.registerPlugin(ScrollTrigger);
 
 const TINTS: Record<string, string> = {
   amber: "var(--tint-amber)",
@@ -12,51 +10,40 @@ const TINTS: Record<string, string> = {
   emerald: "var(--tint-emerald)",
 };
 
-const GROUPS: { label: string; tint: keyof typeof TINTS; skills: string[] }[] = [
+const GROUPS = [
   {
     label: "Programming Languages",
+    icon: Terminal,
     tint: "amber",
-    skills: ["Python", "Java", "JavaScript"],
+    skills: ["Python", "Java", "JavaScript", "C++"],
   },
   {
     label: "Web Technologies",
+    icon: Globe,
     tint: "purple",
-    skills: ["HTML", "CSS", "React"],
+    skills: ["HTML", "CSS", "React", "TypeScript"],
   },
   {
     label: "CS Fundamentals",
+    icon: Cpu,
     tint: "blue",
-    skills: ["Data Structures", "Algorithms", "OOP"],
+    skills: ["Data Structures", "Algorithms", "OOP", "OS"],
   },
   {
     label: "AI & Tools",
+    icon: Brain,
     tint: "emerald",
-    skills: ["Machine Learning", "Git", "VS Code"],
+    skills: ["Machine Learning", "Git", "VS Code", "Linux"],
   },
 ];
 
 export default function SkillsSection() {
-  const sectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.from(`.${styles.group}`, {
-        y: 60,
-        opacity: 0,
-        duration: 0.8,
-        stagger: 0.12,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: `.${styles.grid}`,
-          start: "top 82%",
-        },
-      });
-    }, sectionRef);
-    return () => ctx.revert();
-  }, []);
-
   return (
-    <section ref={sectionRef} className={styles.section} id="skills">
+    <section className={styles.section} id="skills">
+      {/* Ambient background glowing orbs */}
+      <span className={`${styles.orb} ${styles.orbLeft}`} aria-hidden="true" />
+      <span className={`${styles.orb} ${styles.orbRight}`} aria-hidden="true" />
+
       <div className={styles.header}>
         <span className={styles.eyebrow}>Capabilities</span>
         <h2 className={styles.heading}>Technical Skills</h2>
@@ -66,22 +53,37 @@ export default function SkillsSection() {
       </div>
 
       <div className={styles.grid}>
-        {GROUPS.map((group) => (
-          <div
-            key={group.label}
-            className={styles.group}
-            style={{ ["--tint" as string]: TINTS[group.tint] }}
-          >
-            <h3 className={styles.groupLabel}>{group.label}</h3>
-            <ul className={styles.skillList}>
-              {group.skills.map((s) => (
-                <li key={s} className={styles.skill}>
-                  {s}
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
+        {GROUPS.map((group, groupIdx) => {
+          const Icon = group.icon;
+          return (
+            <motion.div
+              key={group.label}
+              className={styles.group}
+              style={{ ["--tint" as string]: TINTS[group.tint] }}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.8, delay: groupIdx * 0.1, ease: [0.22, 1, 0.36, 1] }}
+            >
+              <div className={styles.groupHeader}>
+                <div className={styles.iconWrapper}>
+                  <Icon className={styles.groupIcon} size={20} />
+                </div>
+                <h3 className={styles.groupLabel}>{group.label}</h3>
+              </div>
+              <div className={styles.skillList}>
+                {group.skills.map((s) => (
+                  <Magnet key={s} strength={8} className={styles.magnetWrapper}>
+                    <div className={styles.skillTag}>
+                      <span className={styles.skillDot} />
+                      <span className={styles.skillName}>{s}</span>
+                    </div>
+                  </Magnet>
+                ))}
+              </div>
+            </motion.div>
+          );
+        })}
       </div>
     </section>
   );

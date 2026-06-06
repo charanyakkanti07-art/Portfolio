@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useRef } from "react";
+import Navbar from "@/components/portfolio/Navbar";
 import VideoIntro from "@/components/portfolio/VideoIntro";
 import AboutSection from "@/components/portfolio/AboutSection";
 import ServicesSection from "@/components/portfolio/ServicesSection";
@@ -41,6 +42,7 @@ function Index() {
 
   return (
     <main>
+      <Navbar />
       <VideoIntro onScrollDown={scrollToContent} />
       <div ref={contentRef}>
         <AboutSection />
