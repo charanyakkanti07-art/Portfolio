@@ -55,7 +55,7 @@
   opacity: 0;
   background: radial-gradient(
     480px circle at var(--mx, 50%) 50%,
-    oklch(0.74 0.17 55 / 0.14),
+    rgba(250, 137, 39, 0.14),
     transparent 65%
   );
   transition: opacity 0.4s ease;
@@ -106,7 +106,7 @@
 }
 
 .row:hover .dot {
-  box-shadow: 0 0 18px 2px oklch(0.82 0.16 65 / 0.8);
+  box-shadow: 0 0 18px 2px rgba(255, 172, 65, 0.8);
 }
 
 .row:hover .title {

@@ -24,7 +24,7 @@
   letter-spacing: -0.02em;
   white-space: nowrap;
   color: transparent;
-  -webkit-text-stroke: 1px oklch(0.7 0.02 264 / 0.5);
+  -webkit-text-stroke: 1px rgba(152, 159, 171, 0.5);
   transition: color 0.4s ease;
 }
 

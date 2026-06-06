@@ -43,7 +43,7 @@
   z-index: 2;
   background: linear-gradient(
     180deg,
-    oklch(0.1 0.02 264 / 0.7) 0%,
+    rgba(13, 18, 27, 0.7) 0%,
     transparent 35%
   );
   pointer-events: none;
@@ -64,7 +64,7 @@
   background: radial-gradient(
     ellipse at center,
     transparent 40%,
-    oklch(0.06 0.02 264 / 0.7) 100%
+    rgba(7, 9, 14, 0.7) 100%
   );
   pointer-events: none;
 }
@@ -86,7 +86,7 @@
   font-weight: 500;
   color: var(--primary-glow);
   margin-bottom: clamp(0.75rem, 2vw, 1.25rem);
-  text-shadow: 0 2px 18px oklch(0.06 0.02 264 / 0.8);
+  text-shadow: 0 2px 18px rgba(7, 9, 14, 0.8);
 }
 
 .name {
@@ -97,7 +97,7 @@
   font-weight: 700;
   letter-spacing: -0.02em;
   font-size: clamp(3rem, 11vw, 8.5rem);
-  text-shadow: 0 8px 40px oklch(0.04 0.02 264 / 0.85);
+  text-shadow: 0 8px 40px rgba(4, 5, 8, 0.85);
 }
 
 .nameLine {
@@ -117,8 +117,8 @@
   max-width: 540px;
   font-size: clamp(0.95rem, 1.7vw, 1.2rem);
   line-height: 1.6;
-  color: oklch(0.92 0.01 90 / 0.88);
-  text-shadow: 0 2px 16px oklch(0.06 0.02 264 / 0.9);
+  color: rgba(235, 233, 229, 0.88);
+  text-shadow: 0 2px 16px rgba(7, 9, 14, 0.9);
 }
 
 /* Glass controls */
@@ -151,7 +151,7 @@
 
 .glassBtn:hover {
   transform: translateY(-2px) scale(1.05);
-  background: oklch(0.74 0.17 55 / 0.22);
+  background: rgba(250, 137, 39, 0.22);
   box-shadow: var(--shadow-glow-warm);
 }
 
@@ -183,16 +183,16 @@
   height: 8px;
   border-radius: 999px;
   background: var(--primary-glow);
-  box-shadow: 0 0 0 0 oklch(0.82 0.16 65 / 0.7);
+  box-shadow: 0 0 0 0 rgba(255, 172, 65, 0.7);
   animation: pulseRing 1.8s ease-out infinite;
 }
 
 @keyframes pulseRing {
   0% {
-    box-shadow: 0 0 0 0 oklch(0.82 0.16 65 / 0.6);
+    box-shadow: 0 0 0 0 rgba(255, 172, 65, 0.6);
   }
   100% {
-    box-shadow: 0 0 0 12px oklch(0.82 0.16 65 / 0);
+    box-shadow: 0 0 0 12px rgba(255, 172, 65, 0);
   }
 }
 
@@ -220,7 +220,7 @@
   background: transparent;
   border: none;
   cursor: pointer;
-  color: oklch(0.9 0.01 90 / 0.8);
+  color: rgba(230, 228, 224, 0.8);
 }
 
 .scrollLabel {
@@ -235,7 +235,7 @@
   width: 2px;
   height: 54px;
   border-radius: 2px;
-  background: oklch(0.9 0.01 90 / 0.2);
+  background: rgba(230, 228, 224, 0.2);
   overflow: hidden;
 }
 
@@ -297,7 +297,7 @@
   border-radius: 16px;
   backdrop-filter: blur(20px) saturate(1.4);
   -webkit-backdrop-filter: blur(20px) saturate(1.4);
-  box-shadow: 0 20px 50px oklch(0.04 0.02 264 / 0.8), var(--shadow-glow-warm);
+  box-shadow: 0 20px 50px rgba(7, 9, 14, 0.8), var(--shadow-glow-warm);
   overflow: hidden;
   transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.4s ease;
 }
@@ -312,7 +312,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 0.85rem 1.25rem;
-  background: oklch(0.12 0.02 264 / 0.5);
+  background: rgba(12, 17, 26, 0.5);
   border-bottom: 1px solid var(--glass-border);
 }
 
@@ -342,7 +342,7 @@
 .terminalTitle {
   font-family: monospace;
   font-size: 0.72rem;
-  color: oklch(0.9 0.01 90 / 0.5);
+  color: rgba(230, 228, 224, 0.5);
   letter-spacing: 0.05em;
 }
 
@@ -371,10 +371,10 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  background: oklch(0.08 0.02 264 / 0.3);
+  background: rgba(9, 12, 18, 0.3);
   border-radius: 8px;
   overflow: hidden;
-  border: 1px solid oklch(0.2 0.02 264 / 0.2);
+  border: 1px solid rgba(28, 33, 43, 0.2);
 }
 
 .canvasContainer::before {
@@ -383,10 +383,10 @@
   inset: 0;
   background: linear-gradient(
     0deg,
-    oklch(0.08 0.02 264 / 0.4) 0%,
+    rgba(9, 12, 18, 0.4) 0%,
     transparent 10%,
     transparent 90%,
-    oklch(0.08 0.02 264 / 0.4) 100%
+    rgba(9, 12, 18, 0.4) 100%
   );
   pointer-events: none;
   z-index: 2;
@@ -418,7 +418,7 @@
 }
 
 .dataVal {
-  color: oklch(0.9 0.01 90 / 0.85);
+  color: rgba(230, 228, 224, 0.85);
   word-break: break-all;
 }
 
@@ -427,7 +427,7 @@
   align-items: center;
   gap: 0.5rem;
   padding-top: 0.75rem;
-  border-top: 1px solid oklch(0.2 0.02 264 / 0.2);
+  border-top: 1px solid rgba(28, 33, 43, 0.2);
 }
 
 .activityPulse {
@@ -441,7 +441,7 @@
 .footerText {
   font-family: monospace;
   font-size: 0.65rem;
-  color: oklch(0.9 0.01 90 / 0.4);
+  color: rgba(230, 228, 224, 0.4);
   letter-spacing: 0.05em;
 }
 

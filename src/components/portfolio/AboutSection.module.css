@@ -4,7 +4,7 @@
   background:
     radial-gradient(
       ellipse at 20% 0%,
-      oklch(0.74 0.17 55 / 0.1),
+      rgba(250, 137, 39, 0.1),
       transparent 55%
     ),
     var(--obsidian);
@@ -89,8 +89,8 @@
   border: 1px solid var(--glass-border);
   background: linear-gradient(
     160deg,
-    oklch(0.95 0.01 90 / 0.06),
-    oklch(0.95 0.01 90 / 0.02)
+    rgba(242, 240, 236, 0.06),
+    rgba(242, 240, 236, 0.02)
   );
   backdrop-filter: blur(22px);
   -webkit-backdrop-filter: blur(22px);
@@ -152,7 +152,7 @@
   right: 8%;
   background: radial-gradient(
     circle,
-    oklch(0.82 0.16 65 / 0.6),
+    rgba(255, 172, 65, 0.6),
     transparent 70%
   );
 }
@@ -164,7 +164,7 @@
   left: 4%;
   background: radial-gradient(
     circle,
-    oklch(0.6 0.13 245 / 0.45),
+    rgba(45, 134, 200, 0.45),
     transparent 70%
   );
 }

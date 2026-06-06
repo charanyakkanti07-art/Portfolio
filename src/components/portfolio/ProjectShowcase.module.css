@@ -5,7 +5,7 @@
   background:
     radial-gradient(
       ellipse at 80% 0%,
-      oklch(0.6 0.13 245 / 0.12),
+      rgba(45, 134, 200, 0.12),
       transparent 55%
     ),
     var(--obsidian-raised);
@@ -95,8 +95,8 @@
   border-radius: calc(var(--radius-4xl) - 1px);
   background: linear-gradient(
     160deg,
-    oklch(0.2 0.02 264 / 0.92),
-    oklch(0.15 0.02 264 / 0.92)
+    rgba(28, 33, 43, 0.92),
+    rgba(18, 23, 31, 0.92)
   );
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
@@ -114,7 +114,7 @@
   height: 110%;
   background: radial-gradient(
     circle,
-    var(--accentGlow, oklch(0.74 0.17 55 / 0.18)),
+    var(--accentGlow, rgba(250, 137, 39, 0.18)),
     transparent 70%
   );
   pointer-events: none;
@@ -199,8 +199,8 @@
   border-radius: 999px;
   font-size: 0.78rem;
   color: var(--secondary-glow);
-  border: 1px solid oklch(0.6 0.13 245 / 0.3);
-  background: oklch(0.6 0.13 245 / 0.1);
+  border: 1px solid rgba(45, 134, 200, 0.3);
+  background: rgba(45, 134, 200, 0.1);
 }
 
 @media (max-width: 880px) {
