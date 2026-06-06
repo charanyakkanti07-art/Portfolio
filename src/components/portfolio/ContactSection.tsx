@@ -8,8 +8,8 @@ import styles from "./ContactSection.module.css";
 const CONTACTS = [
   {
     label: "Email",
-    value: "yakkanticharanreddy@gmail.com",
-    href: "mailto:yakkanticharanreddy@gmail.com",
+    value: "charanyakkanti.07@gmail.com",
+    href: "mailto:charanyakkanti.07@gmail.com",
     icon: Mail,
   },
   {
